@@ -11,6 +11,7 @@ export default function Header() {
       <div>
         <Link to="/characterlist">Characters</Link>
       </div>
+
     </header>
   );
 }
