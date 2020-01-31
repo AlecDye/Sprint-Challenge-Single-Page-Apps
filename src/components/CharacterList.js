@@ -12,7 +12,8 @@ export default function CharacterList(props) {
       axios
         .get("https://rickandmortyapi.com/api/character/")
         .then(response => {
-          console.log(response)
+          // console.log(response.data.results)
+          setCharacter(response.data.results)
         })
         .catch(error => {
           console.log("Request error", error)
@@ -22,12 +23,16 @@ export default function CharacterList(props) {
   }, [characters]);
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-      {characters.map(character => (
-        <div>
-          <CharacterCard key={character.id} character={character} />
-        </div>
-      ))}
+      {characters.map((character, index) => {
+        return (
+          <CharacterCard
+            key={character.id}
+            character={character.name}
+            status={character.status}
+            species={character.species}
+          />
+        );
+      })}
     </section>
   );
 }
