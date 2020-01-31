@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { useParams } from "react-router-dom";
 // import axios from "axios";
 
@@ -17,10 +17,10 @@ export default function CharacterCard(props) {
   //     })
   // }, [character])
   return (
-    <div>
+    <div key={props.id}>
       <h3>{props.character}</h3>
-      <p>{props.status}</p>
-      <p>{props.species}</p>
+      <p>Status: {props.status}</p>
+      <p>Species: {props.species}</p>
     </div>
   );
 }

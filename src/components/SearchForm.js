@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CharacterCard from "./CharacterCard";
 import axios from "axios";
 
 export default function SearchForm() {
@@ -22,6 +23,25 @@ export default function SearchForm() {
       })
   }, [searchWord]);
 
+  // search bar v.1
+  // return (
+  //   <div>
+  //     <section className="search-form">
+  //       <form className="searchBar">
+  //         <input type="text" onChange={handleInputChange} value={searchWord} name="name" />
+  //       </form>
+  //     </section>
+  //     {searchResults.map(entry => (
+  //       <ul>
+  //         <li>{entry.name}</li>
+  //         <li>{entry.status}</li>
+  //         <li>{entry.species}</li>
+  //       </ul>
+  //     ))}
+
+  //   </div>
+
+  // search bar v.2
   return (
     <div>
       <section className="search-form">
@@ -29,14 +49,19 @@ export default function SearchForm() {
           <input type="text" onChange={handleInputChange} value={searchWord} name="name" />
         </form>
       </section>
-      {searchResults.map(entry => (
-        <ul>
-          <li>{entry.name}</li>
-          <li>{entry.status}</li>
-          <li>{entry.speices}</li>
-        </ul>
-      ))}
 
+      {searchResults.map((character) => {
+        return (
+          <CharacterCard
+            key={character.id}
+            image={character.image}
+            character={character.name}
+            status={character.status}
+            species={character.species}
+          />
+        )
+      }
+      )}
     </div>
-  );
+  )
 }

@@ -29,6 +29,7 @@ export default function CharacterList(props) {
         return (
           <CharacterCard
             key={character.id}
+            image={character.image}
             character={character.name}
             status={character.status}
             species={character.species}
