@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CharacterCard from "./CharacterCard";
 import axios from "axios";
+import { Form, Input } from "reactstrap";
 
 export default function SearchForm() {
   const [searchWord, setSearchWord] = useState("");
@@ -45,11 +46,10 @@ export default function SearchForm() {
   return (
     <div>
       <section className="search-form">
-        <form className="searchBar">
-          <input type="text" onChange={handleInputChange} value={searchWord} name="name" />
-        </form>
+        <Form className="searchBar">
+          <Input type="text" onChange={handleInputChange} value={searchWord} name="name" placeholder="Search characters" />
+        </Form>
       </section>
-
       {searchResults.map((character) => {
         return (
           <CharacterCard

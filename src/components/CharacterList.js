@@ -24,7 +24,6 @@ export default function CharacterList(props) {
   }, [characters]);
   return (
     <section className="character-list">
-      <SearchForm />
       {characters.map((character, index) => {
         return (
           <CharacterCard

@@ -1,6 +1,8 @@
 import React from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle
+} from "reactstrap";
 
 export default function CharacterCard(props) {
   // console.log(props)
@@ -17,10 +19,10 @@ export default function CharacterCard(props) {
   //     })
   // }, [character])
   return (
-    <div key={props.id}>
-      <h3>{props.character}</h3>
-      <p>Status: {props.status}</p>
-      <p>Species: {props.species}</p>
-    </div>
+    <Card key={props.id}>
+      <CardTitle>{props.character}</CardTitle>
+      <CardText>Status: {props.status}</CardText>
+      <CardText>Species: {props.species}</CardText>
+    </Card>
   );
 }
