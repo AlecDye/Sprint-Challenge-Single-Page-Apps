@@ -61,8 +61,3 @@ header nav {
 .card-container {
   margin: 15px 30%;
 }
-
-.character-list {
-  display: flex;
-  flex-wrap: wrap;
-}

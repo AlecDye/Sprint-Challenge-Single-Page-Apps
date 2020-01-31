@@ -22,9 +22,12 @@ export default function CharacterCard(props) {
   return (
     <div className="card-container">
       <Card key={props.id}>
-        <CardTitle>{props.character}</CardTitle>
-        <CardText>Status: {props.status}</CardText>
-        <CardText>Species: {props.species}</CardText>
+        <CardImg top width="100%" src={props.image} alt="profile pic" name="image"></CardImg>
+        <CardBody>
+          <CardTitle>{props.character}</CardTitle>
+          <CardText>Status: {props.status}</CardText>
+          <CardText>Species: {props.species}</CardText>
+        </CardBody>
       </Card>
     </div>
   );
