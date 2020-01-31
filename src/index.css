@@ -37,3 +37,32 @@ main {
 header h1 {
   text-align: center;
 }
+
+header nav {
+  width: 40%;
+  margin-left: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.welcome-page header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-img {
+  width: 300px;
+  height: auto;
+  margin-top: 5%;
+}
+
+.card-container {
+  margin: 15px 30%;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+}
